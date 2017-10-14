@@ -1,16 +1,12 @@
 import time
 #import serial
 import pygame
+import sys
 
 #to get mouse and key pesses
 from pygame.locals import *
 
 pygame.init()
-
-#get width and height of screen
-surface = pygame.display.get_surface() #get the surface of the current active display
-x,y = size = surface.get_width(), surface.get_height()#create an array of surface.width and surface.height
-screen = pygame.display.set_mode((w,h))
 
 #Global Stuff
 
@@ -20,6 +16,12 @@ response = ""
 number_kris = "0033637165118"
 number = ""
 
+#globat GUI
+blue = (48, 77, 204)
+teal = (148, 207, 211)
+
+screen = pygame.display.set_mode((640,320))
+screen.fill(teal)
 
 #print "Initialising Modem.."
 #serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
@@ -33,9 +35,8 @@ number = ""
 #response = serialport.readlines(None)
 
 while True:
-	screen.fill((22,140,200))
 
-	number = raw_input("Enter Phone number::\n")
+	number = input("Enter Phone number::\n")
 
 	if number == "Kris" or number == "kris":
 		number = number_kris
@@ -56,7 +57,7 @@ while True:
 				sys.exit()
 
 
-message = raw_input("Enter Message::\n")
+message = input("Enter Message::\n")
 
 print("Initialising Modem..")
 # serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
