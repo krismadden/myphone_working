@@ -64,13 +64,13 @@ def button(msg,x,y,w,h,inactiveCol, activeCol, action=None):
     click = pygame.mouse.get_pressed()
 
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
-    	pygame.draw.rect(gameDisplay, inactiveCol, (x,y,w,h))
-	    	if click[0] == 1 and action != None:
-	    		if action == "PLAY":
-	    			game_loop()
-	    		elif action == "QUIT":
-	    			pygame.quit()
-	    			quit()
+        pygame.draw.rect(gameDisplay, inactiveCol, (x,y,w,h))
+        if click[0] == 1 and action != None:
+            if action == "PLAY":
+                game_loop()
+            elif action == "QUIT":
+                pygame.quit()
+                quit()
 
     else:
     	pygame.draw.rect(gameDisplay, activeCol, (x,y,w,h))
