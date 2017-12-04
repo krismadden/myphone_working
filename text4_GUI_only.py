@@ -65,8 +65,9 @@ class Main(object):
 			#this loops through them looking for specific ones
 			for event in pygame.event.get():
 				if event.type == pygame.KEYDOWN:
-					pygame.quit()
-					quit()
+					if event.key == K_q:
+						pygame.quit()
+						quit()
 
 def button(msg,x,y,w,h,inactiveCol, activeCol, action=None):
 
