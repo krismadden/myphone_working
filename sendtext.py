@@ -26,8 +26,7 @@ def textInfo( ):
 			continue
 		else:
 			break
-	
-	message = raw_input("Enter Message::\n")
+
 	
 	
 # 	print "Initialising Modem.."
@@ -67,6 +66,8 @@ def modemSetup():
 
 
 def sendText():
+	message = raw_input("Enter Message::\n")
+	
 	serialport.write("AT+CMGF=1\r")
 	response = serialport.read(None)
 	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
