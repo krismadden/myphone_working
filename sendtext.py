@@ -9,7 +9,7 @@ message = "Hello Kris. From, Kris"
 response = ""
 number_kris = "0033637165118"
 number = ""
-serialport = ""
+serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
 
 
 def textInfo( ):
@@ -31,7 +31,6 @@ def textInfo( ):
 
 def modemSetup():
 	print "Initialising Modem.."
-	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
 	serialport.write("AT\r")
 	response = serialport.read(None)
 	serialport.write("ATE0\r")
