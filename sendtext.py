@@ -64,10 +64,11 @@ def modemSetup():
 	response = serialport.read(None)
 	serialport.write("AT\r")
 	response = serialport.read(None)
-	serialport.write("AT+CMGF=1\r")
-	response = serialport.read(None)
+
 
 def sendText():
+	serialport.write("AT+CMGF=1\r")
+	response = serialport.read(None)
 	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
 	serialport.write("AT+CMGS=\"" + number + "\"\n")
 	serialport.write(message+"\r")
