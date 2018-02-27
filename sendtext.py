@@ -66,11 +66,12 @@ def modemSetup():
 
 
 def sendText():
+	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
+	
 	message = raw_input("Enter Message::\n")
 	
 	serialport.write("AT+CMGF=1\r")
 	response = serialport.read(None)
-	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
 	serialport.write("AT+CMGS=\"" + number + "\"\n")
 	serialport.write(message+"\r")
 	serialport.write("\x1A") #ctrlz
