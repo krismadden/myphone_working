@@ -104,9 +104,8 @@ textInfo()
 # sendText()
 
 
-while exit != True:
-	textInfo()
-
+while end != True:
+	textInfo() 
 
 
 
