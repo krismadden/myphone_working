@@ -53,6 +53,7 @@ def textInfo( ):
 			end = False
 			break
 		elif YorN == "n" or "N" or "no" or "No" or "NO":
+			end = True
 			break
 		else:
 			print "Error. Type 'y' for yes or 'n' for no and press enter."
