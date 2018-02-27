@@ -12,7 +12,7 @@ number = ""
 exit = False
 
 
-def textInfo( mylist ):
+def textInfo( ):
 
 	while True:
 		number = raw_input("Enter Phone number::\n")
