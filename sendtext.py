@@ -31,6 +31,8 @@ def textInfo( ):
 
 	message = raw_input("Enter Message::\n")
 	
+	response = ""
+	
 	print "Initialising Modem.."
 	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
 	serialport.write("AT\r")
