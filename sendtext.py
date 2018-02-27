@@ -46,6 +46,12 @@ def textInfo( ):
 	serialport.write("\x1A") #ctrlz
 	response = serialport.readlines(None)
 	
+	if response[1] == "OK\r\n":
+		print "Sent!"
+	else:
+		print "Opps. Error"
+		print response
+		
 	while True:
 		YorN = raw_input("Send another message? [y/n]?\n")
 		
@@ -60,11 +66,6 @@ def textInfo( ):
 			continue
 	
 	
-	if response[1] == "OK\r\n":
-		print "Sent!"
-	else:
-		print "Opps. Error"
-		print response
 
 # def modemSetup():
 # 	print "Initialising Modem.."
