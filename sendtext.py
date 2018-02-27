@@ -11,7 +11,6 @@ number_kris = "0033637165118"
 number = ""
 YorN = ""
 end = False
-# serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
 
 
 def textInfo( ):
@@ -64,44 +63,14 @@ def textInfo( ):
 			end = True
 			break
 		else:
-			print "Error. Type 'y' for yes or 'n' for no and press enter.\n"
+			print "Error. Type 'y' for yes or 'n' for no and press enter.\n\n"
 			continue
 	
 	
 
-# def modemSetup():
-# 	print "Initialising Modem.."
-# 	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
-# 	serialport.write("AT\r")
-# 	response = serialport.read(None)
-# 	serialport.write("ATE0\r")
-# 	response = serialport.read(None)
-# 	serialport.write("AT\r")
-# 	response = serialport.read(None)
 
-
-# def sendText():
-# 	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
-	
-# 	message = raw_input("Enter Message::\n")
-	
-# 	serialport.write("AT+CMGF=1\r")
-# 	response = serialport.read(None)
-# 	serialport.write("AT+CMGS=\"" + number + "\"\n")
-# 	serialport.write(message+"\r")
-# 	serialport.write("\x1A") #ctrlz
-# 	response = serialport.readlines(None)
-	
-# 	if response[1] == "OK\r\n":
-# 		print "Sent!"
-# 	else:
-# 		print "Opps. Error"
-# 		print response
-
-
-textInfo()
-# modemSetup()
-# sendText()
+#just commented this out and did not test it.
+# textInfo()
 
 
 while end != True:
