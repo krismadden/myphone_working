@@ -101,8 +101,8 @@ textInfo()
 
 if exit != True:
 	textInfo()
-else:
-	break
+# else:
+# 	break
 
 
 
