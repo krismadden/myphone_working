@@ -27,7 +27,7 @@ def textInfo( ):
 		else:
 			break
 			
-	return
+			
 textInfo()
 
 message = raw_input("Enter Message::\n")
