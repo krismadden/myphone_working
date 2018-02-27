@@ -9,6 +9,7 @@ message = "Hello Kris. From, Kris"
 response = ""
 number_kris = "0033637165118"
 number = ""
+serialport = ""
 
 
 def textInfo( ):
