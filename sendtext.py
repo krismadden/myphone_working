@@ -49,10 +49,10 @@ def textInfo( ):
 	while True:
 		YorN = raw_input("Send another message? [y/n]?")
 		
-		if YorN == "y" || "Y" || "yes" || "Yes" || "YES":
+		if YorN == "y" or "Y" or "yes" or "Yes" or "YES":
 			end = False
 			break
-		elif YorN == "n" || "N" || "no" || "No" || "NO":
+		elif YorN == "n" or "N" or "no" or "No" or "NO":
 			break
 		else:
 			print "Error. Type 'y' for yes or 'n' for no and press enter."
