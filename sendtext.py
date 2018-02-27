@@ -9,6 +9,8 @@ message = "Hello Kris. From, Kris"
 response = ""
 number_kris = "0033637165118"
 number = ""
+YorN = ""
+end = False
 # serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
 
 
@@ -29,32 +31,6 @@ def textInfo( ):
 
 	
 	
-# 	print "Initialising Modem.."
-# 	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
-# 	serialport.write("AT\r")
-# 	response = serialport.read(None)
-# 	serialport.write("ATE0\r")
-# 	response = serialport.read(None)
-# 	serialport.write("AT\r")
-# 	response = serialport.read(None)
-# 	serialport.write("AT+CMGF=1\r")
-# 	response = serialport.read(None)
-# 	serialport.write("AT+CMGS=\"" + number + "\"\n")
-# 	serialport.write(message+"\r")
-# 	serialport.write("\x1A") #ctrlz
-# 	response = serialport.readlines(None)
-
-
-
-
-
-# 	if response[1] == "OK\r\n":
-# 		print "Sent!"
-# 	else:
-# 		print "Opps. Error"
-# 		print response
-
-def modemSetup():
 	print "Initialising Modem.."
 	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
 	serialport.write("AT\r")
@@ -63,13 +39,6 @@ def modemSetup():
 	response = serialport.read(None)
 	serialport.write("AT\r")
 	response = serialport.read(None)
-
-
-def sendText():
-	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
-	
-	message = raw_input("Enter Message::\n")
-	
 	serialport.write("AT+CMGF=1\r")
 	response = serialport.read(None)
 	serialport.write("AT+CMGS=\"" + number + "\"\n")
@@ -77,18 +46,63 @@ def sendText():
 	serialport.write("\x1A") #ctrlz
 	response = serialport.readlines(None)
 	
+	while True:
+		YorN = raw_input("Send another message? [y/n]?")
+		
+		if YorN == "y" || "Y" || "yes" || "Yes" || "YES":
+			end = False
+			break
+		elif YorN == "n" || "N" || "no" || "No" || "NO":
+			break
+		else:
+			print "Error. Type 'y' for yes or 'n' for no and press enter."
+			continue
+	
+	
 	if response[1] == "OK\r\n":
 		print "Sent!"
 	else:
 		print "Opps. Error"
 		print response
 
+# def modemSetup():
+# 	print "Initialising Modem.."
+# 	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
+# 	serialport.write("AT\r")
+# 	response = serialport.read(None)
+# 	serialport.write("ATE0\r")
+# 	response = serialport.read(None)
+# 	serialport.write("AT\r")
+# 	response = serialport.read(None)
+
+
+# def sendText():
+# 	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
+	
+# 	message = raw_input("Enter Message::\n")
+	
+# 	serialport.write("AT+CMGF=1\r")
+# 	response = serialport.read(None)
+# 	serialport.write("AT+CMGS=\"" + number + "\"\n")
+# 	serialport.write(message+"\r")
+# 	serialport.write("\x1A") #ctrlz
+# 	response = serialport.readlines(None)
+	
+# 	if response[1] == "OK\r\n":
+# 		print "Sent!"
+# 	else:
+# 		print "Opps. Error"
+# 		print response
+
 
 textInfo()
-modemSetup()
-sendText()
+# modemSetup()
+# sendText()
 
-
+if exit != True:
+	textInfo()
+else:
+	break
 
 
 
