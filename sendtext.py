@@ -29,7 +29,7 @@ def textInfo( ):
 		else:
 			break
 
-	
+	message = raw_input("Enter Message::\n")
 	
 	print "Initialising Modem.."
 	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
@@ -47,7 +47,7 @@ def textInfo( ):
 	response = serialport.readlines(None)
 	
 	while True:
-		YorN = raw_input("Send another message? [y/n]?")
+		YorN = raw_input("Send another message? [y/n]?\n")
 		
 		if YorN == "y" or "Y" or "yes" or "Yes" or "YES":
 			end = False
@@ -56,7 +56,7 @@ def textInfo( ):
 			end = True
 			break
 		else:
-			print "Error. Type 'y' for yes or 'n' for no and press enter."
+			print "Error. Type 'y' for yes or 'n' for no and press enter.\n"
 			continue
 	
 	
