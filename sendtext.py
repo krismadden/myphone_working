@@ -101,10 +101,14 @@ textInfo()
 # modemSetup()
 # sendText()
 
-if exit != True:
-	textInfo()
-# else:
-# 	break
+
+while True:
+	if exit != True:
+		textInfo()
+		continue
+	else:
+		break
+
 
 
 
