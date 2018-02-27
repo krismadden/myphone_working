@@ -9,7 +9,6 @@ message = "Hello Kris. From, Kris"
 response = ""
 number_kris = "0033637165118"
 number = ""
-exit = False
 
 
 def textInfo( ):
@@ -26,11 +25,11 @@ def textInfo( ):
 			continue
 		else:
 			break
+	
+	message = raw_input("Enter Message::\n")
 			
 			
 textInfo()
-
-message = raw_input("Enter Message::\n")
 
 print "Initialising Modem.."
 serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
