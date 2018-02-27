@@ -40,7 +40,7 @@ def modemSetup():
 	serialport.write("AT+CMGF=1\r")
 	response = serialport.read(None)
 
-def sendText:
+def sendText():
 	serialport.write("AT+CMGS=\"" + number + "\"\n")
 	serialport.write(message+"\r")
 	serialport.write("\x1A") #ctrlz
