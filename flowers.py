@@ -1,11 +1,13 @@
 import time
 import serial
+from random import *
 
 
 #Global Stuff
 
 numberstring = ""
-message = "Hello Kris. From, Kris"
+messages = ["You had me at aloe.", "I'd like to spend more thyme with you", "Please don't ever leaf me.", "Stop. Hammer thyme.", "I'm rooting for you!", "Leaf me alone.", "It's spring. We are so excited we wet our plants!", "I'm awesome, dill with it.", "Say aloe to my little friend.", "I hope thistle cheer you up."]
+message = []
 response = ""
 number_kris = "0033637165118"
 number = ""
@@ -29,7 +31,7 @@ def textInfo( ):
 		else:
 			break
 
-	message = raw_input("Enter Message::\n")
+	message = messagerandint(0, len(messages))
 	
 	response = ""
 	
@@ -55,53 +57,21 @@ def textInfo( ):
 		print response
 		
 	while True:
-		YorN = raw_input("Send another message? [y/n]?\n")
+		YorN = raw_input("Send another message? [y=1/n=2]?\n")
 		
-		if YorN == "y" or "Y" or "yes" or "Yes" or "YES":
+		if YorN == "1":
 			end = False
 			break
-		elif YorN == "n" or "N" or "no" or "No" or "NO":
+		elif YorN == "2"
 			end = True
 			break
 		else:
 			print "Error. Type 'y' for yes or 'n' for no and press enter.\n"
 			continue
 	
-	
-
-# def modemSetup():
-# 	print "Initialising Modem.."
-# 	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
-# 	serialport.write("AT\r")
-# 	response = serialport.read(None)
-# 	serialport.write("ATE0\r")
-# 	response = serialport.read(None)
-# 	serialport.write("AT\r")
-# 	response = serialport.read(None)
-
-
-# def sendText():
-# 	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
-	
-# 	message = raw_input("Enter Message::\n")
-	
-# 	serialport.write("AT+CMGF=1\r")
-# 	response = serialport.read(None)
-# 	serialport.write("AT+CMGS=\"" + number + "\"\n")
-# 	serialport.write(message+"\r")
-# 	serialport.write("\x1A") #ctrlz
-# 	response = serialport.readlines(None)
-	
-# 	if response[1] == "OK\r\n":
-# 		print "Sent!"
-# 	else:
-# 		print "Opps. Error"
-# 		print response
 
 
 textInfo()
-# modemSetup()
-# sendText()
 
 
 while end != True:
