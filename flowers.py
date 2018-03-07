@@ -31,7 +31,7 @@ def textInfo( ):
 		else:
 			break
 
-	message = message[randint(0, len(messages))]
+	message = messages[randint(0, len(messages))]
 	
 	response = ""
 	
