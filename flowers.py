@@ -62,7 +62,7 @@ def textInfo( ):
 		if YorN == "1":
 			end = False
 			break
-		elif YorN == "2"
+		elif YorN == "2":
 			end = True
 			break
 		else:
