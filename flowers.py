@@ -6,14 +6,33 @@ from random import *
 #Global Stuff
 
 numberstring = ""
-messages = ["You had me at aloe.", "I'd like to spend more thyme with you", "Please don't ever leaf me.", "Stop. Hammer thyme.", "I'm rooting for you!", "Leaf me alone.", "It's spring. We are so excited we wet our plants!", "I'm awesome, dill with it.", "Say aloe to my little friend.", "I hope thistle cheer you up."]
-message = []
+messages = ["You had me at aloe.", 
+	    "I'd like to spend more thyme with you", 
+	    "Please don't ever leaf me.", 
+	    "Stop. Hammer thyme.", 
+	    "I'm rooting for you!", 
+	    "Leaf me alone.", 
+	    "It's spring. We are so excited we wet our plants!", 
+	    "I'm awesome, dill with it.", 
+	    "Say aloe to my little friend.", 
+	    "I hope thistle cheer you up.",
+	   "Chive had my eye on you.",
+	   "Don't squash my dreams.",
+	   "Peas, Love, and Happiness.",
+	   "I bean longing for your company.",
+	   "I'm meloncholy without you.",
+	   "We make a great pear.",
+	   "I always have a berry nice time with you.",
+	   "Turnip the party!",
+	   "Will you rosemary me?",
+	   "You're my missing peas.",
+	   "This is acorny pun."]
+message = ""
 response = ""
 number_kris = "0033637165118"
 number = ""
 YorN = ""
 end = False
-# serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
 
 
 def textInfo( ):
@@ -31,7 +50,7 @@ def textInfo( ):
 		else:
 			break
 
-	message = messages[randint(0, len(messages))]
+	message = messages[randint(0, len(messages))] + "\n" + "\n" + "This plant pun was sent to you by the plant phone."
 	
 	response = ""
 	
@@ -66,7 +85,7 @@ def textInfo( ):
 			end = True
 			break
 		else:
-			print "Error. Type 'y' for yes or 'n' for no and press enter.\n"
+			print "Error. Type '1' for yes or '2' for no and press enter.\n"
 			continue
 	
 
