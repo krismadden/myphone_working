@@ -72,12 +72,6 @@ def textInfo( ):
 	
 	if response[1] == "OK\r\n":
 		print "Sent!"
-		for x in range(17):
-			sphd.clear()
-			for y in range(7):
-				sphd.set_pixel(x,y,0.25)
-			sphd.show()
-			time.sleep(1/17.0)
 	else:
 		print "Opps. Error"
 		print response
@@ -95,7 +89,12 @@ def textInfo( ):
 			print "Error. Type '1' for yes or '2' for no and press enter.\n"
 			continue
 	
-
+for x in range(17):
+	sphd.clear()
+	for y in range(7):
+		sphd.set_pixel(x, y, 0.25)
+	sphd.show()
+	time.sleep(1/17.0)
 
 textInfo()
 
