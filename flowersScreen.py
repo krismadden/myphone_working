@@ -1,4 +1,4 @@
-import scrollphathd as sphd
+import scrollphat
 import time
 import serial
 from random import *
@@ -90,10 +90,10 @@ def textInfo( ):
 			continue
 	
 # for x in range(17):
-# 	sphd.clear()
+# 	scrollphat.clear()
 # 	for y in range(7):
-# 		sphd.set_pixel(x, y, 0.25)
-# 	sphd.show()
+# 		scrollphat.set_pixel(x, y, 0.25)
+# 	scrollphat.show()
 # 	time.sleep(1/17.0)
 
 textInfo()
