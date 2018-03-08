@@ -1,7 +1,7 @@
 import time
 import serial
 from random import *
-import scrollphathd as sphd
+#import scrollphathd as sphd
 
 
 #Global Stuff
@@ -89,12 +89,12 @@ def textInfo( ):
 			print "Error. Type '1' for yes or '2' for no and press enter.\n"
 			continue
 	
-for x in range(17):
-	sphd.clear()
-	for y in range(7):
-		sphd.set_pixel(x, y, 0.25)
-	sphd.show()
-	time.sleep(1/17.0)
+# for x in range(17):
+# 	sphd.clear()
+# 	for y in range(7):
+# 		sphd.set_pixel(x, y, 0.25)
+# 	sphd.show()
+# 	time.sleep(1/17.0)
 
 textInfo()
 
