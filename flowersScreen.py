@@ -1,7 +1,7 @@
 import time
 import serial
 from random import *
-#import scrollphathd as sphd
+import scrollphathd as sphd
 
 
 #Global Stuff
