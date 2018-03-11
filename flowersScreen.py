@@ -1,4 +1,4 @@
-import scrollphathd
+from scrollphathd import *
 import time
 import serial
 from random import *
