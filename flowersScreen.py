@@ -37,7 +37,7 @@ YorNKM89 = ""
 endKM89 = False
 
 
-def textInfo( ):
+#def textInfo( ):
 
 # 	while True:
 # 		numberKM89 = raw_input("Enter Phone number::\n")
