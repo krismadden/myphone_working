@@ -90,12 +90,12 @@ def textInfo( ):
 			print "Error. Type '1' for yes or '2' for no and press enter.\n"
 			continue
 
-# for x in range(17):
-# 	scrollphat.clear()
-# 	for y in range(7):
-# 		scrollphat.set_pixel(x, y, 0.25)
-# 	scrollphat.show()
-# 	time.sleep(1/17.0)
+for x in range(17):
+	scrollphat.clear()
+	for y in range(7):
+		scrollphat.set_pixel(x, y, 0.25)
+	scrollphat.show()
+	time.sleep(1/17.0)
 
 textInfo()
 
