@@ -1,8 +1,9 @@
-from scrollphathd import *
+#!usr/bin/env python
+
 import time
 import serial
 from random import *
-
+import scrollphathd
 
 #Global Stuff
 
@@ -52,9 +53,9 @@ def textInfo( ):
 			break
 
 	messageKM89 = messagesKM89[randint(0, len(messagesKM89))] + "\n" + "\n" + "This plant pun was sent to you by the plant phone."
-	
+
 	responseKM89 = ""
-	
+
 	print "Initialising Modem.."
 	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
 	serialport.write("AT\r")
@@ -69,16 +70,16 @@ def textInfo( ):
 	serialport.write(message+"\r")
 	serialport.write("\x1A") #ctrlz
 	response = serialport.readlines(None)
-	
+
 	if response[1] == "OK\r\n":
 		print "Sent!"
 	else:
 		print "Opps. Error"
 		print response
-		
+
 	while True:
 		YorNKM89 = raw_input("Send another message? [y=1/n=2]?\n")
-		
+
 		if YorNKM89 == "1":
 			endKM89 = False
 			break
@@ -88,7 +89,7 @@ def textInfo( ):
 		else:
 			print "Error. Type '1' for yes or '2' for no and press enter.\n"
 			continue
-	
+
 # for x in range(17):
 # 	scrollphat.clear()
 # 	for y in range(7):
@@ -100,7 +101,7 @@ textInfo()
 
 
 while endKM89 != True:
-	textInfo() 
+	textInfo()
 
 
 
