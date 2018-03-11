@@ -97,11 +97,11 @@ for x in range(17):
 	scrollphat.show()
 	time.sleep(1/17.0)
 
-textInfo()
+# textInfo()
 
 
-while endKM89 != True:
-	textInfo()
+# while endKM89 != True:
+# 	textInfo()
 
 
 
