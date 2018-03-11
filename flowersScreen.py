@@ -39,56 +39,56 @@ endKM89 = False
 
 def textInfo( ):
 
-	while True:
-		numberKM89 = raw_input("Enter Phone number::\n")
+# 	while True:
+# 		numberKM89 = raw_input("Enter Phone number::\n")
 
-		if numberKM89 == "Kris" or numberKM89 == "kris":
-			numberKM89 = number_krisKM89
-			print "texting kris..."
-			break
-		elif len(numberKM89) > 13 or len(numberKM89) < 10:
-			print "Error. Try entering your number in one of the following formats::" + "\n" + "0637165118 +330637165118 or 0033637165118"
-			continue
-		else:
-			break
+# 		if numberKM89 == "Kris" or numberKM89 == "kris":
+# 			numberKM89 = number_krisKM89
+# 			print "texting kris..."
+# 			break
+# 		elif len(numberKM89) > 13 or len(numberKM89) < 10:
+# 			print "Error. Try entering your number in one of the following formats::" + "\n" + "0637165118 +330637165118 or 0033637165118"
+# 			continue
+# 		else:
+# 			break
 
-	messageKM89 = messagesKM89[randint(0, len(messagesKM89))] + "\n" + "\n" + "This plant pun was sent to you by the plant phone."
+# 	messageKM89 = messagesKM89[randint(0, len(messagesKM89))] + "\n" + "\n" + "This plant pun was sent to you by the plant phone."
 
-	responseKM89 = ""
+# 	responseKM89 = ""
 
-	print "Initialising Modem.."
-	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
-	serialport.write("AT\r")
-	response = serialport.read(None)
-	serialport.write("ATE0\r")
-	response = serialport.read(None)
-	serialport.write("AT\r")
-	response = serialport.read(None)
-	serialport.write("AT+CMGF=1\r")
-	response = serialport.read(None)
-	serialport.write("AT+CMGS=\"" + number + "\"\n")
-	serialport.write(message+"\r")
-	serialport.write("\x1A") #ctrlz
-	response = serialport.readlines(None)
+# 	print "Initialising Modem.."
+# 	serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
+# 	serialport.write("AT\r")
+# 	response = serialport.read(None)
+# 	serialport.write("ATE0\r")
+# 	response = serialport.read(None)
+# 	serialport.write("AT\r")
+# 	response = serialport.read(None)
+# 	serialport.write("AT+CMGF=1\r")
+# 	response = serialport.read(None)
+# 	serialport.write("AT+CMGS=\"" + number + "\"\n")
+# 	serialport.write(message+"\r")
+# 	serialport.write("\x1A") #ctrlz
+# 	response = serialport.readlines(None)
 
-	if response[1] == "OK\r\n":
-		print "Sent!"
-	else:
-		print "Opps. Error"
-		print response
+# 	if response[1] == "OK\r\n":
+# 		print "Sent!"
+# 	else:
+# 		print "Opps. Error"
+# 		print response
 
-	while True:
-		YorNKM89 = raw_input("Send another message? [y=1/n=2]?\n")
+# 	while True:
+# 		YorNKM89 = raw_input("Send another message? [y=1/n=2]?\n")
 
-		if YorNKM89 == "1":
-			endKM89 = False
-			break
-		elif YorNKM89 == "2":
-			endKM89 = True
-			break
-		else:
-			print "Error. Type '1' for yes or '2' for no and press enter.\n"
-			continue
+# 		if YorNKM89 == "1":
+# 			endKM89 = False
+# 			break
+# 		elif YorNKM89 == "2":
+# 			endKM89 = True
+# 			break
+# 		else:
+# 			print "Error. Type '1' for yes or '2' for no and press enter.\n"
+# 			continue
 
 for x in range(17):
 	scrollphat.clear()
