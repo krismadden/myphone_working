@@ -62,6 +62,9 @@ readit()
 serialport.write("AT+CSCS=\"IRA\"\r")
 readit()
 
+serialport.write("AT+CSCS?\r")
+readit()
+
 #serialport.write("AT+CMGF?\r")
 #readit()
 
