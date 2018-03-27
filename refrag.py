@@ -55,12 +55,12 @@ readit()
 serialport.write("AT+CSMS=1\r")
 readit()
 
-serialport.write("AT+CSCS?\r")
-readit()
+#serialport.write("AT+CSCS?\r")
+#readit()
 
 #serialport.write("AT+CSCS=\"GSM\"\r")
-#serialport.write("AT+CSCS=\"UCS2\"\r")
-#readit()
+serialport.write("AT+CSCS=\"IRA\"\r")
+readit()
 
 #serialport.write("AT+CMGF?\r")
 #readit()
