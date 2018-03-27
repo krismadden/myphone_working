@@ -8,6 +8,10 @@ response = ""
 number_kris = "0033637165118"
 number = ""
 
+def readit():
+	response = serialport.readlines(None)
+	print response
+	
 while True:
 	number = raw_input("Enter Phone number::\n")
 
@@ -25,40 +29,42 @@ message = raw_input("Enter Message::\n")
 
 print "Initialising Modem.."
 serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
-response = serialport.readlines(None)
-print response
-serialport.write("AT+CMEE=2\r")
-response = serialport.readlines(None)
-print response
-serialport.write("AT+CMGF=1\r")
-response = serialport.readlines(None)
-print response
-serialport.write("AT+CSMS=1\r")
-response = serialport.readlines(None)
-print response
-serialport.write("AT+CSCS?\r")
-response = serialport.readlines(None)
-print response
-serialport.write("AT+CSCS=\"GSM\"\r")
-response = serialport.readlines(None)
-print response
+readit()
+
 serialport.write("AT+CPIN?\r")
-response = serialport.readlines(None)
-print response
+readit()
+
 serialport.write("AT+CPIN=\"1234\"\r")
-response = serialport.readlines(None)
-print response
+readit()
+
 serialport.write("AT+COPS=0\r")
-response = serialport.readlines(None)
-print response
-serialport.write("AT+CMGF?\r")
-response = serialport.readlines(None)
-print response
+readit()
+
+serialport.write("AT+CMEE=2\r")
+readit()
+
 serialport.write("AT+CMGF=1\r")
-response = serialport.readlines(None)
-print response
+readit()
+
+serialport.write("AT+CSMS=1\r")
+readit()
+
+serialport.write("AT+CSCS?\r")
+readit()
+
+serialport.write("AT+CSCS=\"GSM\"\r")
+readit()
+
+serialport.write("AT+CMGF?\r")
+readit()
+
+serialport.write("AT+CMGF=1\r")
+readit()
+
 serialport.write("AT+CMGS=\"" + number + "\"\n")
 #serialport.write("AT+CMGS=\"0637165118\"<CR>\n")
 serialport.write(message+"\r")
 serialport.write("\x1A") #ctrlz
-response = serialport.readlines(None)
+readit()
+
+
