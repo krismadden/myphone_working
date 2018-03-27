@@ -37,6 +37,9 @@ readit()
 serialport.write("ATE1\r") #helps with rebugging
 readit()
 
+serialport.write("AT+CREG=1")
+readit()
+
 serialport.write("AT+CPIN?\r")
 readit()
 
