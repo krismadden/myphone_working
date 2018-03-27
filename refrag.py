@@ -34,12 +34,6 @@ print "Initialising Modem.."
 serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
 readit()
 
-serialport.write("AT+CPWROFF\r")
-readit()
-
-serialport.write("+++\r")
-readit()
-
 serialport.write("ATE1\r") #helps with rebugging
 readit()
 
