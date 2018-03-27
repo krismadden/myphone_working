@@ -55,21 +55,20 @@ readit()
 serialport.write("AT+CSMS=1\r")
 readit()
 
-serialport.write("AT+CSCS?\r")
-readit()
+#serialport.write("AT+CSCS?\r")
+#readit()
 
 serialport.write("AT+CSCS=\"GSM\"\r")
 readit()
 
-serialport.write("AT+CMGF?\r")
-readit()
+#serialport.write("AT+CMGF?\r")
+#readit()
 
 serialport.write("AT+CMGF=1\r")
 readit()
 
 serialport.write("AT+CMGS=\"" + number + "\"\n")
 serialport.write(message+"\r")
-serialport.write("\x1A") #ctrlz
 serialport.write("\x1A") #ctrlz
 readit()
 
