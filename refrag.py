@@ -11,6 +11,7 @@ number = ""
 def readit():
 	response = serialport.readlines(None)
 	print response
+	time.sleep(0.25)   # delays for 5 = 5 seconds 0.5 = 1/2 second.
 	
 while True:
 	number = raw_input("Enter Phone number::\n")
@@ -65,7 +66,6 @@ serialport.write("AT+CMGF=1\r")
 readit()
 
 serialport.write("AT+CMGS=\"" + number + "\"\n")
-#serialport.write("AT+CMGS=\"0637165118\"<CR>\n")
 serialport.write(message+"\r")
 serialport.write("\x1A") #ctrlz
 readit()
