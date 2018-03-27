@@ -71,7 +71,7 @@ readit()
 serialport.write("AT+CREG=1,5\r")
 readit()
 
-serialport.write("AT+ICF=3,255\r")
+serialport.write("AT+ICF=3,3\r")
 readit()
 
 
