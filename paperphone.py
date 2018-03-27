@@ -76,8 +76,10 @@ readit()
 
 
 serialport.write("AT+CMGS=\"" + number + "\"\n")
+readit()
 time.sleep(0.5)
 serialport.write(message+"\r")
+readit()
 time.sleep(0.5)
 #serialport.write(chr(26))
 serialport.write('\x1A')
