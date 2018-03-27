@@ -68,11 +68,11 @@ readit()
 serialport.write("AT+CSMP=17,168,0,0\r")
 readit()
 
-serialport.write("AT+CREG=1,5\r")
+serialport.write("AT+CREG=1\r")
 readit()
 
-serialport.write("AT+ICF=3,3\r")
-readit()
+# serialport.write("AT+ICF=3,3\r")
+# readit()
 
 
 serialport.write("AT+CMGS=\"" + number + "\"\n")
