@@ -49,8 +49,8 @@ readit()
 serialport.write("AT+CPIN=\"1234\"\r")
 readit()
 
-serialport.write("AT+COPS=0\r")
-readit()
+#serialport.write("AT+COPS=0\r")
+#readit()
 
 serialport.write("AT+CMEE=2\r")
 readit()
