@@ -31,6 +31,9 @@ print "Initialising Modem.."
 serialport = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
 readit()
 
+serialport.write("ATE0\r")
+readit()
+
 serialport.write("AT+CPIN?\r")
 readit()
 
