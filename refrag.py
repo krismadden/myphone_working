@@ -78,7 +78,8 @@ serialport.write("AT+CMGS=\"" + number + "\"\n")
 serialport.write(message+"\r")
 #serialport.write("\x1A") #ctrlz
 #serialport.write(char.ConvertFromUtf32(26));
-serialport.write(chr(26));
+time.sleep(3)
+serialport.write(chr(26))
 #time.sleep(3)
 readit()
 
