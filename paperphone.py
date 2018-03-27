@@ -37,51 +37,36 @@ readit()
 serialport.write("ATE1\r") #helps with rebugging
 readit()
 
-serialport.write("AT+CREG=1\r")
-readit()
+# serialport.write("AT+CREG=1\r")
+# readit()
 
-serialport.write("AT+CPIN?\r")
-readit()
+# serialport.write("AT+CPIN?\r")
+# readit()
 
-serialport.write("AT+CPIN=\"1234\"\r")
-readit()
+# serialport.write("AT+CPIN=\"1234\"\r")
+# readit()
 
-#serialport.write("AT+COPS=0\r")
-#readit() 
+# #serialport.write("AT+COPS=0\r")
+# #readit() 
 
-serialport.write("AT+CMEE=2\r")
-readit()
+# serialport.write("AT+CMEE=2\r")
+# readit()
 
-serialport.write("AT+CMGF=1\r")
-readit()
+# serialport.write("AT+CMGF=1\r")
+# readit()
 
-serialport.write("AT+CSMS=1\r")
-readit()
+# serialport.write("AT+CSMS=1\r")
+# readit()
 
-#serialport.write("AT+CSCS?\r")
-#readit()
 
-#serialport.write("AT+CSCS=\"GSM\"\r")
-serialport.write("AT+CSCS=\"IRA\"\r")
-readit()
-
-serialport.write("AT+CSCS?\r")
-readit()
-
-#serialport.write("AT+CMGF?\r")
-#readit()
-
-serialport.write("AT+CMGF=1\r")
-readit()
+# #serialport.write("AT+CSCS=\"GSM\"\r")
+# serialport.write("AT+CSCS=\"IRA\"\r")
+# readit()
 
 serialport.write("AT+CMGS=\"" + number + "\"\n")
 serialport.write(message+"\r")
 time.sleep(3)
-serialport.write("\x1A") #ctrlz
-#serialport.write("\x1A") #ctrlz
-#serialport.write(char.ConvertFromUtf32(26));
-#serialport.write(chr(26))
-#time.sleep(3)
+serialport.write(chr(26))
 readit()
 
 
