@@ -4,7 +4,7 @@ letter = ""
 message = ""
 
 
-print "Enter message.\n- Press 2-9 for letters.\n- Enter 0 for spaces and punctuation.\n- Press enter after each character.\n- Enter 1 as the last character to send."
+print "Enter message.\n- Press 2-9 for letters.\n- Enter 0 for spaces and punctuation.\n- Press enter after each character.\n- Enter 01 as the last character to send."
 while True:
     letter = raw_input("Message = " + message + "\n")
 
@@ -96,12 +96,14 @@ while True:
         message = message + "0"
 
     elif letter == "1":
+        message = message + "1"
+        #break
+
+    elif letter == "01":
+        print "Sending: " + message
         break
 
     else:
         print "\"" + letter + "\" is not recognized. Try again."
 
-    if message.endswith('1'):
-        break
-    else:
-        continue
+    continue
