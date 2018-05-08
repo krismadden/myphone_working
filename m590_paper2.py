@@ -19,7 +19,7 @@ modem.init()
 while True:
 	m590.ser.write("at+cpin?\r")
 	response = m590.ser.readlines(None)
-	print response
+#	print response
 
 	if response[2] == "+CPIN: READY\r\n" or response[1] == "+CPIN: READY\r\n":
 		print "pin okay. let's go."
@@ -170,7 +170,7 @@ print "Sending text.."
 modem.send_sms(number, message)
 
 response = m590.ser.readlines(None)
-if(response[0] == "\n"):
+if response[0] == "\n":
 	print "Sent!"
 else:
 	print response
