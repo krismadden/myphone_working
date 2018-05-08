@@ -1,15 +1,8 @@
-#from espeak import espeak
-
-#espeak.set_voice("en")
-
-#espeak.synth("hello")
-
-
 import sys
 import pyttsx
 
 voiceEngine = pyttsx.init()
-voiceEngine.setProperty('rate', 125)
+voiceEngine.setProperty('rate', 150)
 
 def speak(str):
 	if len(sys.argv) > 1:
@@ -28,9 +21,9 @@ def main():
 	print voice
 	
 	
-	speak("how are you doing?")
+	speak("Type something to say!")
 	while True:
-		input = raw_input("Enter Something to Say or type EXIT to exit.\n")
+		input = raw_input("Enter something to say or type EXIT to exit.\n")
 		if input == "EXIT" or input == "exit" or input == "Exit":
 			break
 		else:
