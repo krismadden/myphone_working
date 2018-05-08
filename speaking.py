@@ -3,8 +3,8 @@ import pyttsx
 
 voiceEngine = pyttsx.init()
 voiceEngine.setProperty('rate', 150)
-voices = voiceEngine.getProperty('voices')
-voiceEngine.setProperty('voice', voices[50].id)
+# voices = voiceEngine.getProperty('voices')
+# voiceEngine.setProperty('voice', voices[50].id)
 
 def speak(str):
 	if len(sys.argv) > 1:
@@ -21,7 +21,7 @@ def main():
 	print rate
 	print volume
 	print voice
-	print voices
+# 	print voices
 	
 	
 	speak("Type something to say!")
