@@ -30,11 +30,7 @@ def main():
 		if input == "EXIT" or input == "exit" or input == "Exit":
 			break
 		else:
-			str = input
-			if  len(sys.argv) > 1:
-				str = sys.argv[1]
-			engine.say(str)
-			engine.runAndWait()
+			speak(input)
 
 if __name__ == '__main__':
 	main()
