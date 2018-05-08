@@ -3,7 +3,7 @@ import pyttsx
 
 voiceEngine = pyttsx.init()
 voiceEngine.setProperty('rate', 150)
-voiceEngine.setProperty('voice', 25)
+voiceEngine.setProperty('voice', voices[1].id)
 
 def speak(str):
 	if len(sys.argv) > 1:
