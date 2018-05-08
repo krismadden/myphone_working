@@ -11,6 +11,8 @@ import pyttsx
 voiceEngine = pyttsx.init()
 voiceEngine.setProperty('rate', 125)
 
+addedSpaces = ""
+
 def speak(str):
 	if len(sys.argv) > 1:
 		str = sys.argv[1]
