@@ -1,15 +1,8 @@
-#from espeak import espeak
-
-#espeak.set_voice("en")
-
-#espeak.synth("hello")
-
-
 import sys
 import pyttsx
 
 voiceEngine = pyttsx.init()
-voiceEngine.setProperty('rate', 125)
+voiceEngine.setProperty('rate', 150)
 
 addedSpaces = ""
 
@@ -36,8 +29,7 @@ def main():
 		if input == "EXIT" or input == "exit" or input == "Exit":
 			break
 		else:
-			addedSpaces = input + "      "
-			speak(addedSpaces)
+			speak(input)
 
 if __name__ == '__main__':
 	main()
