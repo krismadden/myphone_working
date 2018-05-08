@@ -10,20 +10,23 @@ import pyttsx
 
 
 def speak(str):
-	engine = pyttsx.init()
+	voiceEngine = pyttsx.init()
 	if len(sys.argv) > 1:
 		str = sys.argv[1]
-	engine.say(str)
-	engine.runAndWait()
+	voiceEngine.say(str)
+	voiceEngine.runAndWait()
 
 def main():
-# 	print 'running speaking.py'
-# 	engine = pyttsx.init()
-# 	str = "how are you doing? c'est une belle maison."
-# 	if len(sys.argv) > 1:
-# 		str = sys.argv[1]
-# 	engine.say(str)
-# 	engine.runAndWait()
+
+	rate = voiceEngine.getProperty('rate')
+	volume = voiceEngine.getProperty('volume')
+	voice = voiceEngine.getProperty('voice')
+
+	print rate
+	print volume
+	print voice
+	
+	
 	speak("how are you doing?")
 	while True:
 		input = raw_input("Enter Something to Say or type EXIT to exit.\n")
