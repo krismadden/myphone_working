@@ -34,7 +34,8 @@ def main():
 		if input == "EXIT" or input == "exit" or input == "Exit":
 			break
 		else:
-			speak(input + "    .")
+			addedSpaces = input + "      "
+			speak(addedSpaces)
 
 if __name__ == '__main__':
 	main()
