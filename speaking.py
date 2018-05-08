@@ -15,6 +15,7 @@ def main():
 	rate = voiceEngine.getProperty('rate')
 	volume = voiceEngine.getProperty('volume')
 	voice = voiceEngine.getProperty('voice')
+	voice = voiceEngine.getProperty('voices')
 
 	print rate
 	print volume
