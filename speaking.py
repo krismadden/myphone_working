@@ -3,6 +3,7 @@ import pyttsx
 
 voiceEngine = pyttsx.init()
 voiceEngine.setProperty('rate', 150)
+voices = voiceEngine.getProperty('voices')
 voiceEngine.setProperty('voice', voices[1].id)
 
 def speak(str):
@@ -16,7 +17,6 @@ def main():
 	rate = voiceEngine.getProperty('rate')
 	volume = voiceEngine.getProperty('volume')
 	voice = voiceEngine.getProperty('voice')
-	voice = voiceEngine.getProperty('voices')
 
 	print rate
 	print volume
