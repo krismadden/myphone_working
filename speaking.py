@@ -14,7 +14,7 @@ voiceEngine.setProperty('rate', 125)
 def speak(str):
 	if len(sys.argv) > 1:
 		str = sys.argv[1]
-	voiceEngine.say(str)
+	voiceEngine.say(str + "       ")
 	voiceEngine.runAndWait()
 
 def main():
@@ -28,9 +28,9 @@ def main():
 	print voice
 	
 	
-	speak("how are you doing?")
+	speak("Type something to say or type EXIT to exit.")
 	while True:
-		input = raw_input("Enter Something to Say or type EXIT to exit.\n")
+		input = raw_input("Type something to say or type EXIT to exit.\n")
 		if input == "EXIT" or input == "exit" or input == "Exit":
 			break
 		else:
