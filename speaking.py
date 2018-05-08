@@ -10,11 +10,11 @@ import pyttsx
 
 
 def speak(str):
-	voiceEngine = pyttsx.init()
+	engine = pyttsx.init()
 	if len(sys.argv) > 1:
 		str = sys.argv[1]
-	voiceEngine.say(str)
-	voiceEngine.runAndWait()
+	engine.say(str)
+	engine.runAndWait()
 
 def main():
 
