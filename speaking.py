@@ -8,9 +8,9 @@
 import sys
 import pyttsx
 
-def speak(str speakThis):
+
+def speak(str):
 	engine = pyttsx.init()
-	str = "how are you doing? c'est une belle maison."
 	if len(sys.argv) > 1:
 		str = sys.argv[1]
 	engine.say(str)
