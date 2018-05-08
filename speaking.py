@@ -21,6 +21,7 @@ def main():
 	print rate
 	print volume
 	print voice
+	print voices
 	
 	
 	speak("Type something to say!")
