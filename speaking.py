@@ -8,13 +8,13 @@
 import sys
 import pyttsx
 
+voiceEngine = pyttsx.init()
 
 def speak(str):
-	engine = pyttsx.init()
 	if len(sys.argv) > 1:
 		str = sys.argv[1]
-	engine.say(str)
-	engine.runAndWait()
+	voiceEngine.say(str)
+	voiceEngine.runAndWait()
 
 def main():
 
